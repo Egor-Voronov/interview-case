@@ -1,6 +1,7 @@
 import { reactive, ref } from "vue";
+import type {Ref} from "vue";
 import { defineStore } from "pinia";
-import { IData } from "./store.types.ts";
+import type { IData } from "./store.types.ts";
 
 export const useStore = defineStore('store', () => {
     const data: IData[] = reactive([
@@ -13,8 +14,8 @@ export const useStore = defineStore('store', () => {
     const setCurrentIndex = (index: number) => {
         currentIndex.value = index;
     };
-    const updateField = (field: keyof IData, value: string) => {
-        data[currentIndex.value][field] = value;
+    const updateField = (field: keyof IData, value: Ref<string>) => {
+        data[currentIndex.value][field] = value as never;
     };
 
     return {
