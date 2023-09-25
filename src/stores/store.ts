@@ -4,9 +4,9 @@ import { IData } from "./store.types.ts";
 
 export const useStore = defineStore('store', () => {
     const data: IData[] = reactive([
-        { name: 'Василий', surname: 'Иванов' },
-        { name: 'Александр', surname: 'Александров' },
-        { name: 'Егор', surname: 'Воронов' },
+        { name: 'Василий', surname: 'Иванов', id: 1 },
+        { name: 'Александр', surname: 'Александров', id: 2 },
+        { name: 'Егор', surname: 'Воронов', id: 3 },
     ]);
     const currentIndex = ref(0);
 

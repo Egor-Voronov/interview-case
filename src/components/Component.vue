@@ -27,7 +27,7 @@ const resetData = () => {
                 v-for="(person, index) in store.data"
                 :class="['element', {active: store.currentIndex === index}]"
                 @click="store.currentIndex = index; resetData()"
-                :key="index"
+                :key="person.id"
             >
                 {{ person.name }} {{ person.surname }}
             </div>
