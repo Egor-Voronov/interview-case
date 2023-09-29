@@ -12,8 +12,6 @@ const getCurrentSurname = computed(() => store.data[store.currentIndex].surname)
 const draftName = ref(getCurrentName.value);
 const draftSurname = ref(getCurrentSurname.value);
 
-console.log(typeof draftName)
-
 const resetData = () => {
     draftName.value = getCurrentName.value;
     draftSurname.value = getCurrentSurname.value;

@@ -8,6 +8,11 @@ const props = defineProps<{
     resetData: () => void,
 }>()
 
+const emit = defineEmits<{
+    'update:draftName': (value: string) => void;
+    'update:draftSurname': (value: string) => void;
+}>()
+
 const store = useStore();
 
 const saveData = () => {
@@ -18,8 +23,8 @@ const saveData = () => {
 
 <template>
     <div class="side">
-        <input :value="draftName" @input="$emit('update:draftName', $event.target.value)" />
-        <input :value="draftSurname" @input="$emit('update:draftSurname', $event.target.value)" />
+        <input :value="draftName" @input="emit('update:draftName', $event.target.value)" />
+        <input :value="draftSurname" @input="emit('update:draftSurname', $event.target.value)" />
 
         <button class="save" @click="saveData">сохранить</button>
         <button class="del" @click="resetData">обнулить драфт</button>
